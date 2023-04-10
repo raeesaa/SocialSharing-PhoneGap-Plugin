@@ -652,7 +652,7 @@ public class SocialSharing extends CordovaPlugin {
           PackageManager pm = cordova.getContext().getPackageManager();
           List<ResolveInfo> resInfo = pm.queryIntentActivities(intent, 0);
 
-          // Query intent for google messaging app
+          // Query intent for android messaging app
           String GOOGLE_SMS_APP = "com.google.android.apps.messaging";
           Intent messagingIntent= cordova.getContext().getPackageManager().getLaunchIntentForPackage(GOOGLE_SMS_APP);
           Boolean defaultAppSet = false;
