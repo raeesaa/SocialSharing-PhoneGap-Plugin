@@ -79,11 +79,11 @@
       </receiver>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/*">
+    <edit-config target="AndroidManifest.xml" parent="/*" mode="merge">
       <queries>
           <package android:name="com.google.android.apps.messaging" />
       </queries>
-    </config-file>
+    </edit-config>
 
     <!-- <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
