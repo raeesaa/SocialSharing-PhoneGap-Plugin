@@ -657,7 +657,7 @@ public class SocialSharing extends CordovaPlugin {
           Intent messagingIntent= cordova.getContext().getPackageManager().getLaunchIntentForPackage(GOOGLE_SMS_APP);
           Boolean defaultAppSet = false;
 
-          if(defaultAppSet == false && messagingIntent != null) {
+          if (messagingIntent != null) {
             intent.setPackage(GOOGLE_SMS_APP);
           }
 
