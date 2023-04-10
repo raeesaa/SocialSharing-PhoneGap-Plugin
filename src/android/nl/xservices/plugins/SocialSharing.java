@@ -657,10 +657,6 @@ public class SocialSharing extends CordovaPlugin {
           Intent messagingIntent= cordova.getContext().getPackageManager().getLaunchIntentForPackage(GOOGLE_SMS_APP);
           Boolean defaultAppSet = false;
 
-          if (messagingIntent != null) {
-            intent.setPackage(GOOGLE_SMS_APP);
-          }
-
           for (ResolveInfo info : resInfo) {
             String packageName = info.activityInfo.packageName.toLowerCase();
             if (packageName.contains("mms") || packageName.contains("messaging") || packageName.contains("message")
@@ -669,6 +665,10 @@ public class SocialSharing extends CordovaPlugin {
               intent.setPackage(info.activityInfo.packageName);
               break;
             }
+          }
+
+          if(defaultAppSet == false && messagingIntent != null) {
+            intent.setPackage(GOOGLE_SMS_APP);
           }
 
           cordova.startActivityForResult(plugin, intent, 0);
