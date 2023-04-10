@@ -79,11 +79,12 @@
       </receiver>
     </config-file>
 
-    <edit-config target="AndroidManifest.xml" parent="/*" mode="merge">
+    <config-file target="AndroidManifest.xml" parent="/*">
       <queries>
           <package android:name="com.google.android.apps.messaging" />
+          <package android:name="com.facebook.katana" />
       </queries>
-    </edit-config>
+    </config-file>
 
     <!-- <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
